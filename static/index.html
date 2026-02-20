@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GopherWord - Alphabet Circle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="language-screen" class="screen">
+            <h1>Welcome to GopherWord</h1>
+            <p>Select your language to start:</p>
+            <div class="lang-buttons">
+                <button onclick="startGame('en')">English (A-Z)</button>
+                <button onclick="startGame('tr')">Türkçe (A-Z+)</button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div id="timer-display">05:00</div>
+            <div id="circle-container">
+                <div id="alphabet-circle"></div>
+                <div id="question-box">
+                    <h2 id="current-letter">A</h2>
+                    <p id="question-text">Loading question...</p>
+                    <input type="text" id="answer-input" placeholder="Type your answer..." autofocus>
+                    <div class="game-buttons">
+                        <button id="submit-btn" onclick="submitAnswer()">Submit</button>
+                        <button id="pass-btn" onclick="passQuestion()">Pass</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h1>Game Over</h1>
+            <div id="final-stats">
+                <p>Correct: <span id="stat-correct">0</span></p>
+                <p>Wrong: <span id="stat-wrong">0</span></p>
+                <p>Passed/Remaining: <span id="stat-passed">0</span></p>
+            </div>
+            <button onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
